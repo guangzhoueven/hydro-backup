@@ -1,0 +1,11 @@
+type: remote_judge
+subType: luogu
+target: P1366
+subtasks:
+  - id: 0
+    score: 100
+    time: 1400ms
+    memory: 131072kb
+    cases:
+      - input: /dev/null
+        output: /dev/null

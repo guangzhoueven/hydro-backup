@@ -1,0 +1,494 @@
+type: remote_judge
+subType: luogu
+target: P9441
+subtasks:
+  - id: 0
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 1
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 2
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 3
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 4
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 5
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 6
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 7
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 8
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 9
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 10
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 11
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 12
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 13
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 14
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 15
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 16
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 17
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 18
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 19
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 20
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 21
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 22
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 23
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 24
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 25
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 26
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 27
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 28
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 29
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 30
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 31
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 32
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 33
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 34
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 35
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 36
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 37
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 38
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 39
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 40
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 41
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 42
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 43
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 44
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 45
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 46
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 47
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 48
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 49
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 50
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 51
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 52
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 53
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 54
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 55
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 56
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 57
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 58
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 59
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 60
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 61
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 62
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 63
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 64
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 65
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 66
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 67
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 68
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 69
+    score: 1
+    time: 3000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null

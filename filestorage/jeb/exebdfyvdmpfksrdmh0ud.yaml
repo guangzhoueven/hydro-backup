@@ -1,0 +1,5 @@
+type: remote_judge
+subType: srqc
+target: srqc/J0108
+time: 1000ms
+memory: 256MB

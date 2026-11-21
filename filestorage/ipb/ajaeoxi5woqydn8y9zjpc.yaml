@@ -1,0 +1,39 @@
+type: remote_judge
+subType: luogu
+target: P14120
+subtasks:
+  - id: 0
+    score: 20
+    time: 1000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 1
+    score: 20
+    time: 1000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 2
+    score: 20
+    time: 1000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 3
+    score: 20
+    time: 1000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 4
+    score: 20
+    time: 1000ms
+    memory: 262144kb
+    cases:
+      - input: /dev/null
+        output: /dev/null

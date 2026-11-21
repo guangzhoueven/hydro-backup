@@ -1,0 +1,46 @@
+type: remote_judge
+subType: luogu
+target: P17468
+subtasks:
+  - id: 0
+    score: 16
+    time: 2000ms
+    memory: 524288kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 1
+    score: 16
+    time: 2000ms
+    memory: 524288kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 2
+    score: 16
+    time: 2000ms
+    memory: 524288kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 3
+    score: 16
+    time: 2000ms
+    memory: 524288kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 4
+    score: 16
+    time: 2000ms
+    memory: 524288kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
+  - id: 5
+    score: 16
+    time: 2000ms
+    memory: 524288kb
+    cases:
+      - input: /dev/null
+        output: /dev/null
