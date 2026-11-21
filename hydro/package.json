@@ -1,0 +1,28 @@
+{
+  "name": "hydro-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hydro OJ local instance",
+  "dependencies": {
+    "@cordisjs/plugin-logger": "^1.0.2",
+    "@hydrooj/blog": "^0.1.0-beta.2",
+    "@hydrooj/fps-importer": "^1.7.0",
+    "@hydrooj/geoip": "^1.4.0",
+    "@hydrooj/hydrojudge": "^4.1.0",
+    "@hydrooj/import-hoj": "^0.1.0",
+    "@hydrooj/migrate": "^0.5.1",
+    "@hydrooj/onlyoffice": "^1.5.0",
+    "@hydrooj/onsite-toolkit": "^0.1.1",
+    "@hydrooj/prom-client": "^0.2.0",
+    "@hydrooj/register": "^1.0.4",
+    "@hydrooj/scoreboard-xcpcio": "^0.1.0",
+    "@hydrooj/ui-default": "^4.59.1",
+    "hydrooj": "^5.1.0"
+  },
+  "allowScripts": {
+    "esbuild@0.25.2": true,
+    "protobufjs@7.6.6": true,
+    "@hydrooj/scoreboard-xcpcio@0.1.0": true,
+    "vue-demi@0.14.10": true
+  }
+}

@@ -1,0 +1,17 @@
+[
+  "@hydrooj/hydrojudge",
+  "@hydrooj/ui-default",
+  "@hydrooj/fps-importer",
+  "@hydrooj/import-hoj",
+  "@hydrooj/onsite-toolkit",
+  "@hydrooj/scoreboard-xcpcio",
+  "@hydrooj/onlyoffice",
+  "@hydrooj/prom-client",
+  "@hydrooj/migrate",
+  "@hydrooj/blog",
+  "D:\\hydro\\.hydro\\addons\\hydroac-client",
+  "D:\\hydro\\.hydro\\addons\\badge-for-hydrooj",
+  "D:\\hydro\\.hydro\\addons\\access-log",
+  "D:\\hydro\\.hydro\\addons\\ip-ban",
+  "@hydrooj/geoip"
+]
