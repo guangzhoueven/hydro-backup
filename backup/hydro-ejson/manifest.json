@@ -1,0 +1,118 @@
+[
+  {
+    "collection": "contest.balloon",
+    "count": 0
+  },
+  {
+    "collection": "status",
+    "count": 1
+  },
+  {
+    "collection": "storage",
+    "count": 18486
+  },
+  {
+    "collection": "schedule",
+    "count": 3
+  },
+  {
+    "collection": "opcount",
+    "count": 0
+  },
+  {
+    "collection": "ipban",
+    "count": 0
+  },
+  {
+    "collection": "message",
+    "count": 0
+  },
+  {
+    "collection": "badge",
+    "count": 1
+  },
+  {
+    "collection": "system",
+    "count": 89
+  },
+  {
+    "collection": "record",
+    "count": 11
+  },
+  {
+    "collection": "task",
+    "count": 0
+  },
+  {
+    "collection": "document",
+    "count": 18546
+  },
+  {
+    "collection": "record.stat",
+    "count": 2
+  },
+  {
+    "collection": "event",
+    "count": 8
+  },
+  {
+    "collection": "vuser",
+    "count": 0
+  },
+  {
+    "collection": "document.status",
+    "count": 2
+  },
+  {
+    "collection": "domain",
+    "count": 4
+  },
+  {
+    "collection": "user.group",
+    "count": 0
+  },
+  {
+    "collection": "accesslog",
+    "count": 218
+  },
+  {
+    "collection": "user",
+    "count": 3
+  },
+  {
+    "collection": "record.history",
+    "count": 46
+  },
+  {
+    "collection": "token",
+    "count": 2
+  },
+  {
+    "collection": "userBadge",
+    "count": 1
+  },
+  {
+    "collection": "oplog",
+    "count": 48
+  },
+  {
+    "collection": "domain.user",
+    "count": 6
+  },
+  {
+    "collection": "oauth",
+    "count": 1
+  },
+  {
+    "collection": "problem.statement",
+    "count": 32598
+  },
+  {
+    "collection": "blacklist",
+    "count": 0
+  },
+  {
+    "collection": "deviceban",
+    "count": 0
+  }
+]
