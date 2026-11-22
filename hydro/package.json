@@ -17,6 +17,7 @@
     "@hydrooj/register": "^1.0.4",
     "@hydrooj/scoreboard-xcpcio": "^0.1.0",
     "@hydrooj/ui-default": "^4.59.1",
+    "@hydrooj/vjudge": "^1.10.1",
     "hydrooj": "^5.1.0"
   },
   "allowScripts": {

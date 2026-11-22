@@ -9,9 +9,18 @@
   "@hydrooj/prom-client",
   "@hydrooj/migrate",
   "@hydrooj/blog",
+  "@hydrooj/vjudge",
   "D:\\hydro\\.hydro\\addons\\hydroac-client",
   "D:\\hydro\\.hydro\\addons\\badge-for-hydrooj",
   "D:\\hydro\\.hydro\\addons\\access-log",
   "D:\\hydro\\.hydro\\addons\\ip-ban",
+  "D:\\hydro\\.hydro\\addons\\hydrooj-training-scoreboard",
+  "D:\\hydro\\.hydro\\addons\\hydrooj-secondary-copy",
+  "D:\\hydro\\.hydro\\addons\\hydrooj-vjudge-qoj",
+  "D:\\hydro\\.hydro\\addons\\countdown-33oj",
+  "D:\\hydro\\.hydro\\addons\\checkin-33oj",
+  "D:\\hydro\\.hydro\\addons\\pastebin-33oj",
+  "D:\\hydro\\.hydro\\addons\\realname-33oj",
+  "D:\\hydro\\.hydro\\addons\\coin-33oj",
   "@hydrooj/geoip"
 ]
