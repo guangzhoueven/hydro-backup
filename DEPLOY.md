@@ -8,8 +8,9 @@
 | --- | --- |
 | 题目 | **18482 道**（4 个域：system、srqc 深入浅出、ybtbas 一本通、luogu 洛谷；后三个域为洛谷远程评测题） |
 | 用户 | 3 个（uid=1 系统用户、uid=2 admin 超级管理员、uid=0 guest） |
-| 文件存储 | 18486 个文件（约 63MB，题目数据/题面） |
-| 插件 | hydrojudge、ui-default、fps-importer、import-hoj、onsite-toolkit、scoreboard-xcpcio、onlyoffice、prom-client、migrate、blog、hydroac-client(洛谷开放平台)、badge-for-hydrooj(徽章)、access-log(访问日志+设备封禁)、ip-ban(IP黑名单)、geoip |
+| 文件存储 | 18487 个文件（约 63MB，题目数据/题面/剪贴板） |
+| 插件 | hydrojudge、ui-default、fps-importer、import-hoj、onsite-toolkit、scoreboard-xcpcio、onlyoffice、prom-client、migrate、blog、@hydrooj/vjudge(远程评测框架)、hydroac-client(洛谷开放平台)、badge-for-hydrooj(徽章)、access-log(访问日志+设备封禁)、ip-ban(IP黑名单)、hydrooj-training-scoreboard(训练成绩表)、hydrooj-secondary-copy(题库批量复制)、hydrooj-vjudge-qoj(QOJ远程评测适配)、countdown-33oj(首页倒计时)、checkin-33oj(首页签到)、pastebin-33oj(剪贴板)、realname-33oj(实名/用户名前缀)、coin-33oj(金币)、geoip |
+| 命令行工具 | `tools\` 下 4 个独立工具（不进 addon.json）：hydrooj-problem-transmission(题目传输)、luogu-problem-export(洛谷题导出)、codeforces-testdata(CF测试数据)、xmoj-crawl(xmoj爬取)；进目录 `npm install` 后 `npx tsc` 即可用 |
 | 语言 | 仅 C++（cc 及 cc.cc98/11/14/17/20），编译器为 RedPanda C++ 自带 MinGW-W64 g++ |
 | 记录/日志 | 评测记录、访问日志、IP/设备黑名单等全部保留 |
 
@@ -106,7 +107,8 @@ D:\hydro\
 │                               各项配置的一次性写入/修复工具
 ├─ config.json                 MongoDB 连接串
 ├─ .hydro\addon.json           插件清单
-├─ .hydro\addons\              各插件（含 4 个自研：ip-ban、access-log + badge、hydroac-client）
+├─ .hydro\addons\              各插件（含 12 个本机目录安装：自研 ip-ban/access-log/badge/hydroac-client + 8 个新装训练成绩表/批量复制/vjudge-qoj/倒计时/签到/剪贴板/实名/金币）
+├─ tools\                      4 个独立命令行工具（不进 addon.json，各自 npm install + npx tsc）
 ├─ node_modules\               npm install 生成（deploy.ps1 自动执行）
 ├─ go-judge\go-judge.exe       沙箱 v1.14.1（随仓库提供）
 ├─ backup-assets\              GeoLite2-City.mmdb（deploy.ps1 会拷贝到 geoip 插件目录）

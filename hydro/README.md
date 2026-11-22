@@ -138,6 +138,18 @@ Get-CimInstance Win32_Process -Filter "Name='node.exe'" |
 - `/bin/bash: ... ulimit -s` 失败 —— `stackSize()` 在 Windows 上跑 bash，属预期。
 - MongoDB 被强杀后重启恢复较慢（WiredTiger 日志回放），可能超过 1 分钟，start.ps1 已放宽等待。
 
+## 插件与命令行工具
+
+插件统一在 `.hydro\addon.json` 手动维护（不用 `hydrooj install` CLI），目录安装的插件放 `.hydro\addons\`，改完重启 Hydro 生效。
+
+**24 项清单**（顺序即加载顺序）：官方 10 个（hydrojudge、ui-default、fps-importer、import-hoj、onsite-toolkit、scoreboard-xcpcio、onlyoffice、prom-client、migrate、blog）+ `@hydrooj/vjudge`（npm 包）+ 本机 12 个（自研 hydroac-client、badge-for-hydrooj、access-log、ip-ban；新装 hydrooj-training-scoreboard、hydrooj-secondary-copy、hydrooj-vjudge-qoj、countdown-33oj、checkin-33oj、pastebin-33oj、realname-33oj、coin-33oj）+ `@hydrooj/geoip`（最后）。
+
+- **realname-33oj 与 badge-for-hydrooj 都覆盖 `components/user.html`**，两者已合并为同一份模板（realname 姓名前缀 + 徽章 5 段格式 `id#简称#背景色#文字色#全称`），改模板请两处同步。
+- **倒计时/签到**通过 `hydrooj.homepage` 设置（系统设置 → Basic → Homepage config，YAML）注入首页，只显示未来的日期。
+- **hydrooj-vjudge-qoj** 需配 QOJ 账号（`vjudge` 账号加密密码、`qoj.*` 语言配置）后才能实际远程评测。
+
+`tools\` 下 4 个独立工具（不进 addon.json）：hydrooj-problem-transmission（题目跨站传输）、luogu-problem-export（洛谷题导出 FPS）、codeforces-testdata（CF 测试数据抓取）、xmoj-crawl（xmoj 爬取，依赖 transmission）。使用：进工具目录 `npm install`，再 `npx tsc` 编译（transmission 与 xmoj-crawl 已修过 `stream.on('finish')` 的 TS 类型问题）。
+
 ## 目录结构
 
 ```
@@ -149,8 +161,10 @@ D:\hydro\
 ├─ fix-langs.js              覆盖写入 hydrooj.langs（改语言后跑这个）
 ├─ fix-env.js                覆盖写入 hydrojudge config
 ├─ config.json               MongoDB 连接串
-├─ .hydro\                   Hydro 运行时目录（addon.json、静态资源、迁移标记）
-├─ node_modules\             hydrooj 5.1.0 + hydrojudge + ui-default
+├─ .hydro\                   Hydro 运行时目录（addon.json、插件、静态资源、迁移标记）
+├─ .hydro\addons\            本机安装的 12 个插件（自研 4 个 + 新装 8 个，见下）
+├─ tools\                    4 个独立命令行工具（不进 addon.json，各自 npm install + npx tsc）
+├─ node_modules\             hydrooj 5.1.0 + hydrojudge + ui-default + vjudge 等
 ├─ mongo\                    MongoDB 程序与数据
 ├─ go-judge\                 沙箱程序、缓存、proxy.js 请求日志代理
 ├─ cache\judge\              评测缓存
