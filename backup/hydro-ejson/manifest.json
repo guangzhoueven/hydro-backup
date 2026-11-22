@@ -9,7 +9,7 @@
   },
   {
     "collection": "storage",
-    "count": 18486
+    "count": 18487
   },
   {
     "collection": "schedule",
@@ -33,11 +33,11 @@
   },
   {
     "collection": "system",
-    "count": 89
+    "count": 91
   },
   {
     "collection": "record",
-    "count": 11
+    "count": 5
   },
   {
     "collection": "task",
@@ -45,7 +45,7 @@
   },
   {
     "collection": "document",
-    "count": 18546
+    "count": 18547
   },
   {
     "collection": "record.stat",
@@ -53,7 +53,7 @@
   },
   {
     "collection": "event",
-    "count": 8
+    "count": 3
   },
   {
     "collection": "vuser",
@@ -61,7 +61,7 @@
   },
   {
     "collection": "document.status",
-    "count": 2
+    "count": 3
   },
   {
     "collection": "domain",
@@ -73,7 +73,7 @@
   },
   {
     "collection": "accesslog",
-    "count": 218
+    "count": 405
   },
   {
     "collection": "user",
@@ -81,11 +81,11 @@
   },
   {
     "collection": "record.history",
-    "count": 46
+    "count": 47
   },
   {
     "collection": "token",
-    "count": 2
+    "count": 4
   },
   {
     "collection": "userBadge",
@@ -93,7 +93,7 @@
   },
   {
     "collection": "oplog",
-    "count": 48
+    "count": 53
   },
   {
     "collection": "domain.user",
