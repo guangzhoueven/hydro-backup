@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Hydro OJ 自动部署脚本（在已 clone 到 D:\hydro 的仓库根目录运行）。
 
