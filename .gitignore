@@ -1,0 +1,16 @@
+# 运行时产物（部署后生成，不入库）
+hydro/node_modules/
+hydro/.hydro/static/
+hydro/mongo/
+hydro/cache/
+hydro/tmp/
+hydro/logs/
+hydro/AppData/
+hydro/mongo-dl/
+hydro/go-judge/cache/
+hydro/deploy.log
+hydro/deploy.log.*
+hydro/go-judge/proxy.log
+push.log
+split-push.ps1
+Thumbs.db

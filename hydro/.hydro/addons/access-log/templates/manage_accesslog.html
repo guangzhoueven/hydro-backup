@@ -1,0 +1,111 @@
+{% extends "manage_base.html" %}
+{% block manage_content %}
+<style>
+  .path-cell { max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .path-cell:hover { white-space: normal; overflow: visible; word-break: break-all; max-width: 480px; }
+  #confirm-mask {
+    display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, .45);
+    z-index: 9998; align-items: center; justify-content: center;
+  }
+  .confirm-panel { background: #fff; color: #333; border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,.25); max-width: 440px; width: 90%; padding: 20px 24px; }
+  .theme--dark .confirm-panel { background: #1e1e1e; color: #eee; }
+</style>
+<div id="confirm-mask">
+  <div class="confirm-panel">
+    <h3 style="margin:0 0 10px">确认操作</h3>
+    <p id="confirm-text" class="typo" style="word-break:break-all"></p>
+    <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:16px">
+      <button type="button" id="confirm-cancel" class="rounded button">取消</button>
+      <button type="button" id="confirm-ok" class="rounded primary button">确认封禁</button>
+    </div>
+  </div>
+</div>
+<script>
+var _pendingForm = null;
+function askConfirm(text, form, okText) {
+  _pendingForm = form;
+  document.getElementById('confirm-text').textContent = text;
+  document.getElementById('confirm-ok').textContent = okText || '确认';
+  document.getElementById('confirm-mask').style.display = 'flex';
+  return false;
+}
+(function () {
+  var m = document.getElementById('confirm-mask');
+  document.getElementById('confirm-cancel').onclick = function () { m.style.display = 'none'; _pendingForm = null; };
+  document.getElementById('confirm-ok').onclick = function () { m.style.display = 'none'; if (_pendingForm) _pendingForm.submit(); _pendingForm = null; };
+  m.onclick = function (e) { if (e.target === m) { m.style.display = 'none'; _pendingForm = null; } };
+})();
+</script>
+<div class="section">
+  <div class="section__header">
+    <h1 class="section__title">访问日志</h1>
+  </div>
+  <div class="section__body">
+    <blockquote class="note typo">
+      点击 IP / 设备 单元格可复制内容；「封禁IP」调用 IP 黑名单（默认永久），「封禁设备」按完整 User-Agent 封禁。
+      日志保留 7 天。
+    </blockquote>
+    <form method="get" action="/manage/accesslog" class="row">
+      {{ form.form_text({ columns: 2, label: '用户UID', name: 'uid', placeholder: 'UID', row: false, value: fUid }) }}
+      {{ form.form_text({ columns: 3, label: 'IP', name: 'ip', placeholder: '精确匹配', row: false, value: fIp }) }}
+      {{ form.form_text({ columns: 4, label: '关键字', name: 'q', placeholder: '路径 / 设备 / UA 包含', row: false, value: fQ }) }}
+      <div class="medium-3 columns form__item end">
+        <button type="submit" class="rounded button">筛选</button>
+        <a href="/manage/accesslog" class="typo-a">重置</a>
+      </div>
+    </form>
+
+    {% if not docs.length %}
+    {{ nothing.render('没有匹配的访问记录。') }}
+    {% else %}
+    <div class="section__table-container">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>时间</th>
+            <th>用户</th>
+            <th>IP（点击复制）</th>
+            <th>设备（点击复制完整 UA）</th>
+            <th>访问内容</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for ddoc in docs -%}
+          <tr>
+            <td style="white-space:nowrap">{{ ddoc.time }}</td>
+            <td style="white-space:nowrap">
+              {% if ddoc.uid %}<a href="/user/{{ ddoc.uid }}" class="typo-a">{{ ddoc.uname }}</a> <small>({{ ddoc.uid }})</small>{% else %}游客{% endif %}
+            </td>
+            <td><code style="cursor:pointer" data-copy="{{ ddoc.ip | base64_encode }}" data-tooltip="点击复制">{{ ddoc.ip }}</code></td>
+            <td>
+              <span style="cursor:pointer" data-copy="{{ ddoc.ua | base64_encode }}" data-tooltip="点击复制">
+                {{ ddoc.device }}
+              </span><br>
+              <small style="color:#999;display:inline-block;max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:bottom">{{ ddoc.ua }}</small>
+            </td>
+            <td class="path-cell" title="{{ ddoc.method }} {{ ddoc.path }}">
+              <small>{{ ddoc.method }}</small> {{ ddoc.path }}
+            </td>
+            <td>
+              <form method="post" onsubmit="return askConfirm('确认封禁 IP：' + this.ip.value + ' ？', this, '确认封禁');">
+                <input type="hidden" name="ip" value="{{ ddoc.ip }}">
+                <input type="hidden" name="operation" value="ban_ip">
+                <button type="submit" class="rounded button" style="display:block;width:100%;margin-bottom:4px">封禁IP</button>
+              </form>
+              <form method="post" onsubmit="return askConfirm('确认封禁该设备？其 User-Agent 为：' + this.ua.value.slice(0, 60) + '…', this, '确认封禁');">
+                <input type="hidden" name="ua" value="{{ ddoc.ua }}">
+                <input type="hidden" name="operation" value="ban_device">
+                <button type="submit" class="rounded button" style="display:block;width:100%">封禁设备</button>
+              </form>
+            </td>
+          </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+      {{ paginator.render(page, pcount) }}
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

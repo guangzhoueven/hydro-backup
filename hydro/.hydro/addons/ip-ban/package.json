@@ -1,0 +1,7 @@
+{
+  "name": "ip-ban",
+  "version": "1.0.0",
+  "description": "IP blacklist addon for HydroOJ: ban IPs with expiry, managed from control panel",
+  "main": "index.ts",
+  "license": "MIT"
+}

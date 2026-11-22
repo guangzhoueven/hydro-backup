@@ -1,0 +1,7 @@
+{
+  "name": "access-log",
+  "version": "1.0.0",
+  "description": "Access log viewer for HydroOJ: who (uid) from which IP (v4/v6) with which device (UA) visited what. One-click ban IP/device from the log page; click IP/device to copy.",
+  "main": "index.ts",
+  "license": "MIT"
+}

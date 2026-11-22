@@ -1,0 +1,99 @@
+{% extends "manage_base.html" %}
+{% block manage_content %}
+<style>
+  #confirm-mask {
+    display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, .45);
+    z-index: 9998; align-items: center; justify-content: center;
+  }
+  .confirm-panel { background: #fff; color: #333; border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,.25); max-width: 440px; width: 90%; padding: 20px 24px; }
+  .theme--dark .confirm-panel { background: #1e1e1e; color: #eee; }
+</style>
+<div id="confirm-mask">
+  <div class="confirm-panel">
+    <h3 style="margin:0 0 10px">确认操作</h3>
+    <p id="confirm-text" class="typo" style="word-break:break-all"></p>
+    <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:16px">
+      <button type="button" id="confirm-cancel" class="rounded button">取消</button>
+      <button type="button" id="confirm-ok" class="rounded primary button">确认封禁</button>
+    </div>
+  </div>
+</div>
+<script>
+var _pendingForm = null;
+function askConfirm(text, form, okText) {
+  _pendingForm = form;
+  document.getElementById('confirm-text').textContent = text;
+  document.getElementById('confirm-ok').textContent = okText || '确认';
+  document.getElementById('confirm-mask').style.display = 'flex';
+  return false;
+}
+(function () {
+  var m = document.getElementById('confirm-mask');
+  document.getElementById('confirm-cancel').onclick = function () { m.style.display = 'none'; _pendingForm = null; };
+  document.getElementById('confirm-ok').onclick = function () { m.style.display = 'none'; if (_pendingForm) _pendingForm.submit(); _pendingForm = null; };
+  m.onclick = function (e) { if (e.target === m) { m.style.display = 'none'; _pendingForm = null; } };
+})();
+</script>
+<div class="section">
+  <div class="section__header">
+    <h1 class="section__title">设备黑名单</h1>
+  </div>
+  <div class="section__body">
+    <blockquote class="note typo">
+      被封禁的设备（按完整 User-Agent 匹配）将无法访问本站任何页面（返回 403）。
+      注意：UA 可被伪造，此机制用于阻止重复骚扰，不能作为强安全边界。
+    </blockquote>
+    <form method="post" class="row" onsubmit="return askConfirm('确认封禁该设备？其 User-Agent 为：' + this.ua.value.slice(0, 60) + '…', this, '确认封禁');">
+      <input type="hidden" name="operation" value="add">
+      {{ form.form_text({ columns: 5, label: 'User-Agent（完整字符串）', name: 'ua', placeholder: '粘贴要封禁的 UA', required: true, row: false }) }}
+      {{ form.form_text({ columns: 2, label: '天数', name: 'days', placeholder: '0 = 永久', row: false }) }}
+      {{ form.form_text({ columns: 3, label: '理由（可选）', name: 'reason', row: false }) }}
+      <div class="medium-2 columns form__item end">
+        <button type="submit" class="rounded primary button">添加封禁</button>
+      </div>
+    </form>
+
+    {% if not docs.length %}
+    {{ nothing.render('当前没有封禁任何设备。') }}
+    {% else %}
+    <div class="section__table-container">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>设备</th>
+            <th>User-Agent（点击复制）</th>
+            <th>理由</th>
+            <th>到期时间</th>
+            <th>状态</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for ddoc in docs -%}
+          <tr>
+            <td>{{ ddoc.hash }}…</td>
+            <td>
+              <span style="cursor:pointer" data-copy="{{ ddoc.ua | base64_encode }}" data-tooltip="点击复制">
+                <span style="display:inline-block;max-width:320px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:bottom">{{ ddoc.ua }}</span>
+              </span>
+            </td>
+            <td>{{ ddoc.reason or '-' }}</td>
+            <td>{% if ddoc.permanent %}永久{% else %}{{ ddoc.expireAt }}{% endif %}</td>
+            <td>
+              {% if ddoc.expired %}<span class="inactive">已过期</span>{% else %}<span class="active">生效中</span>{% endif %}
+            </td>
+            <td>
+              <form method="post" style="display:inline">
+                <input type="hidden" name="hash" value="{{ ddoc.hash }}">
+                <button name="operation" value="del" type="submit" class="rounded button">解封</button>
+              </form>
+            </td>
+          </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

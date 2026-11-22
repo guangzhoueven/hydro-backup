@@ -1,0 +1,80 @@
+{% extends "manage_base.html" %}
+{% block manage_content %}
+<div class="section">
+  <div class="section__header">
+    <h1 class="section__title">IP 黑名单管理</h1>
+  </div>
+  <div class="section__body">
+    <blockquote class="note typo">
+      命中黑名单的 IP 将无法访问本站任何页面（返回 403）。封禁本机地址（127.0.0.1 / ::1）会被拒绝。
+      天数留空或填 0 表示永久封禁。
+    </blockquote>
+    <form method="post" class="row">
+      {{ form.form_text({
+        columns: 4,
+        label: 'IP 地址',
+        name: 'ip',
+        placeholder: '例如 192.168.0.5',
+        required: true,
+        row: false
+      }) }}
+      {{ form.form_text({
+        columns: 2,
+        label: '封禁天数',
+        name: 'days',
+        placeholder: '0 = 永久',
+        row: false
+      }) }}
+      {{ form.form_text({
+        columns: 4,
+        label: '理由（可选）',
+        name: 'reason',
+        placeholder: '显示给被封禁用户',
+        row: false
+      }) }}
+      <div class="medium-2 columns form__item end">
+        <button name="operation" value="add" type="submit" class="rounded primary button">添加封禁</button>
+      </div>
+    </form>
+
+    {% if not docs.length %}
+    {{ nothing.render('当前没有封禁任何 IP。') }}
+    {% else %}
+    <div class="section__table-container">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>IP 地址</th>
+            <th>理由</th>
+            <th>到期时间</th>
+            <th>状态</th>
+            <th>操作人 UID</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for ddoc in docs -%}
+          <tr>
+            <td>{{ ddoc.ip }}</td>
+            <td>{{ ddoc.reason or '-' }}</td>
+            <td>{% if ddoc.permanent %}永久{% else %}{{ ddoc.expireAt }}{% endif %}</td>
+            <td>
+              {% if ddoc.expired %}<span class="inactive">已过期</span>
+              {% else %}<span class="active">生效中</span>{% endif %}
+            </td>
+            <td>{{ ddoc.operator or '-' }}</td>
+            <td>
+              <form method="post" style="display:inline">
+                <input type="hidden" name="ip" value="{{ ddoc.ip }}">
+                <button name="operation" value="del" type="submit" class="rounded button">解封</button>
+              </form>
+            </td>
+          </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
